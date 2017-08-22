@@ -1,6 +1,6 @@
 <?php
 $json = file_get_contents('php://input');
-file_put_contents("fb.txt",$_SERVER['REMOTE_ADDR']);
+file_put_contents("fb.txt",$_SERVER['HTTP_CLIENT_IP']);
 $data=json_decode($json);
 $id = $data->entry[0]->id;
 $msg_text = $data->entry[0]->messaging[0]->message->text;
