@@ -5,7 +5,7 @@
 </head>
 <body>
 <script>
-    app.get('/webhook', function(req, res) {
+    app.get('/', function(req, res) {
         if (req.query['hub.mode'] === 'subscribe' &&
             req.query['hub.verify_token'] === <eca_bot>) {
             console.log("Validating webhook");
