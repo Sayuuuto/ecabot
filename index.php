@@ -1,5 +1,5 @@
 <?php
-file_put_contents("fb.txt",file_get_contents("php://input"));
+//file_put_contents("fb.txt",file_get_contents("php://input"));
 $json = file_get_contents('php://input');
 $data=json_decode($json);
 $id = $data->entry[0]->id;
