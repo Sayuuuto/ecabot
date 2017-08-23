@@ -12,22 +12,6 @@ $servername = "sql11.freesqldatabase.com";
 $username = "sql11191189";
 $password = "NbYAQmxQKq";
 $dbname = "api_facebook";
-try {
-
-    $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
-    $sql = "INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id) 
-							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':msg_text', $msg_text);
-    $stmt->bindParam(':msg_id', $msg_id);
-    $stmt->bindParam(':recipient_id', $recipient_id);
-    $stmt->bindParam(':sender_id', $sender_id);
-    $stmt->execute();
-}
-catch(PDOException $e)
-{
-    echo $sql . "<br>" . $e->getMessage();
-}
 $data = array(
     'recipient' => array('id'=> "$sender_id"),
     'message' => array('text' => "Bien recu")
@@ -42,4 +26,21 @@ $options = array(
     )
 );
 $context = stream_context_create($options);
-//file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$token",false,$context);
+
+try {
+
+    $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
+    $sql = "INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id) 
+							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':msg_text', $msg_text);
+    $stmt->bindParam(':msg_id', $msg_id);
+    $stmt->bindParam(':recipient_id', $recipient_id);
+    $stmt->bindParam(':sender_id', $sender_id);
+    $stmt->execute();
+    file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$token",false,$context);
+}
+catch(PDOException $e)
+{
+    echo $sql . "<br>" . $e->getMessage();
+}
