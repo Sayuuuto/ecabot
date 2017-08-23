@@ -30,7 +30,7 @@ try {
     if(isset($msg_text)){
     $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
     $sql = "INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id, sended_at) 
-							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id,':sended_at')";
+							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id,:sended_at)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':msg_text', $msg_text);
     $stmt->bindParam(':msg_id', $msg_id);
