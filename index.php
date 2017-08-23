@@ -26,7 +26,7 @@ $options = array(
     )
 );
 $context = stream_context_create($options);
-$i=0;
+if(!isset($i)) $i=0;
 try {
 
     $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
