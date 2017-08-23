@@ -26,7 +26,7 @@ $options = array(
     )
 );
 $context = stream_context_create($options);
-
+$i=0;
 try {
 
     $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
@@ -39,6 +39,8 @@ try {
     $stmt->bindParam(':sender_id', $sender_id);
     $stmt->execute();
     file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$token",false,$context);
+    $i++;
+    echo $i;
 }
 catch(PDOException $e)
 {
