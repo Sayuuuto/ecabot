@@ -30,7 +30,7 @@ catch(PDOException $e)
 }
 $data = array(
     'recipient' => array('id'=> "$sender_id"),
-    'message' => array('text' => "Bien reçu")
+    'message' => array('text' => "Bien recu")
 );
 $token = "EAAGAib1ZBxU8BAFyzZCUnY9l8IyfSFYSwZAZAtNFvMENYDZA3ZCNWZA6ZARVqdeqR7u1ZAunbSLxjkyxBIPZA0C1bjwPbSKb9jxsZABJUqd9UB6E5KIqO02AF9fqeB2TJqgivLqnU2wEZBGoUXt6m7iTEy7f2wdYwrUAc5mQe5JZCtQhlwQZDZD";
 
@@ -42,5 +42,5 @@ $options = array(
     )
 );
 $context = stream_context_create($options);
-file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=&lt;$token&gt;",false,$context);
+file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$token",false,$context);
 ?>
