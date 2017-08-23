@@ -28,7 +28,7 @@ $options = array(
 $context = stream_context_create($options);
 
 try {
-
+    if(isset($msg_text)){
     $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
     $sql = "INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id) 
 							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id)";
@@ -39,8 +39,7 @@ try {
     $stmt->bindParam(':sender_id', $sender_id);
     $stmt->execute();
     file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$token",false,$context);
-
-    echo $msg_text;
+    }
 }
 catch(PDOException $e)
 {
