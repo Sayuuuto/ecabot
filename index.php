@@ -6,7 +6,7 @@ $msg_text = $data->entry[0]->messaging[0]->message->text;
 $msg_id = $data->entry[0]->messaging[0]->message->mid;
 $recipient_id =$data->entry[0]->messaging[0]->recipient->id;
 $sender_id = $data->entry[0]->messaging[0]->sender->id;
-$sended_at = $data->entry[0]->time;
+$sended_at = $data->entry[0]->messaging[0]->timestamp;
 $servername = "sql11.freesqldatabase.com";
 $username = "sql11191189";
 $password = "NbYAQmxQKq";
@@ -29,7 +29,7 @@ $context = stream_context_create($options);
 try {
     if(isset($msg_text)){
     $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
-    $sql = "INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id,sended_at) 
+    $sql = "INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id, sended_at) 
 							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id,:sended_at)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':msg_text', $msg_text);
