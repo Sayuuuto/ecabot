@@ -9,6 +9,7 @@ $sender_id = $data->entry[0]->messaging[0]->sender->id;
 $sended_at = $data->entry[0]->messaging[0]->timestamp;
 // sended
 $sended_at= $sended_at/1000;
+//sss
 $sended_at = date('Y-m-d H:i:s',$sended_at);
 
 $servername = "sql11.freesqldatabase.com";
