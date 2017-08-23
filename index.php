@@ -7,7 +7,9 @@ $msg_id = $data->entry[0]->messaging[0]->message->mid;
 $recipient_id =$data->entry[0]->messaging[0]->recipient->id;
 $sender_id = $data->entry[0]->messaging[0]->sender->id;
 $sended_at = $data->entry[0]->messaging[0]->timestamp;
+// sended
 $sended_at = date('Y-m-d',$sended_at);
+
 $servername = "sql11.freesqldatabase.com";
 $username = "sql11191189";
 $password = "NbYAQmxQKq";
