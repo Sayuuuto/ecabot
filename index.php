@@ -34,8 +34,8 @@ $context = stream_context_create($options);
 try {
     if(isset($msg_text)){
     $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
-    $sql = "INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id, sended_at) 
-							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id,:sended_at)";
+    $sql = 'INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id, sended_at,type_message) 
+							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id,:sended_at,"recieved")';
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':msg_text', $msg_text);
     $stmt->bindParam(':msg_id', $msg_id);
