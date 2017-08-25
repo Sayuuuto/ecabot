@@ -18,7 +18,7 @@ $servername = "sql11.freesqldatabase.com";
 $username = "sql11191189";
 $password = "NbYAQmxQKq";
 $dbname = "api_facebook";
-
+if($recipient_id!=123802068190097){
 try {
     if(isset($msg_text)){
         $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
@@ -37,4 +37,5 @@ try {
 catch(PDOException $e)
 {
     echo $sql . "<br>" . $e->getMessage();
+}
 }
