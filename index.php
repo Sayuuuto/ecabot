@@ -34,7 +34,7 @@ $dbname = "api_facebook";
 //    )
 //);
 //$context = stream_context_create($options);
-
+$sender_name = "test" ;
 try {
     if(isset($msg_text)){
     $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
