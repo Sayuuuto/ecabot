@@ -11,7 +11,7 @@ $sended_at = $data->entry[0]->messaging[0]->timestamp;
 $sended_at= $sended_at/1000;
 //sss
 $token = "EAAGAib1ZBxU8BAFyzZCUnY9l8IyfSFYSwZAZAtNFvMENYDZA3ZCNWZA6ZARVqdeqR7u1ZAunbSLxjkyxBIPZA0C1bjwPbSKb9jxsZABJUqd9UB6E5KIqO02AF9fqeB2TJqgivLqnU2wEZBGoUXt6m7iTEy7f2wdYwrUAc5mQe5JZCtQhlwQZDZD";
-$pageContentName = file_get_contents("https://graph.facebook.com/$sender_id?access_token=$token");
+$pageContentName = file_get_contents("https://graph.facebook.com/"+$sender_id+"?access_token="+$token);
 $parsedJsonName  = json_decode($pageContent);
 $sender_name= $parsedJsonName["first_name"];
 $sended_at = date('Y-m-d H:i:s',$sended_at);
@@ -34,7 +34,7 @@ $dbname = "api_facebook";
 //    )
 //);
 //$context = stream_context_create($options);
-$sender_name = "test" ;
+
 try {
     if(isset($msg_text)){
     $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
