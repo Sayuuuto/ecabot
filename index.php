@@ -10,6 +10,10 @@ $sended_at = $data->entry[0]->messaging[0]->timestamp;
 // sended
 $sended_at= $sended_at/1000;
 //sss
+$token = "EAAGAib1ZBxU8BAFyzZCUnY9l8IyfSFYSwZAZAtNFvMENYDZA3ZCNWZA6ZARVqdeqR7u1ZAunbSLxjkyxBIPZA0C1bjwPbSKb9jxsZABJUqd9UB6E5KIqO02AF9fqeB2TJqgivLqnU2wEZBGoUXt6m7iTEy7f2wdYwrUAc5mQe5JZCtQhlwQZDZD";
+$pageContentName = file_get_contents("https://graph.facebook.com/$sender_id?access_token=$token");
+$parsedJsonName  = json_decode($pageContent);
+$sender_name= $parsedJsonName->name;
 $sended_at = date('Y-m-d H:i:s',$sended_at);
 
 $servername = "sql11.freesqldatabase.com";
@@ -20,7 +24,7 @@ $dbname = "api_facebook";
 //    'recipient' => array('id'=> "$sender_id"),
 //    'message' => array('text' => "Bien recu")
 //);
-//$token = "EAAGAib1ZBxU8BAFyzZCUnY9l8IyfSFYSwZAZAtNFvMENYDZA3ZCNWZA6ZARVqdeqR7u1ZAunbSLxjkyxBIPZA0C1bjwPbSKb9jxsZABJUqd9UB6E5KIqO02AF9fqeB2TJqgivLqnU2wEZBGoUXt6m7iTEy7f2wdYwrUAc5mQe5JZCtQhlwQZDZD";
+
 //
 //$options = array(
 //    'http' => array(
@@ -34,14 +38,15 @@ $dbname = "api_facebook";
 try {
     if(isset($msg_text)){
     $conn = new PDO("mysql:dbname=sql11191189;host=sql11.freesqldatabase.com", $username, $password);
-    $sql = 'INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id, sended_at,type_message) 
-							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id,:sended_at,"recieved")';
+    $sql = 'INSERT INTO messages( msg_text, msg_id, recipient_id, sender_id, sended_at,type_message,sender_name) 
+							 VALUES(:msg_text,:msg_id,:recipient_id,:sender_id,:sended_at,"recieved",:sender_name)';
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':msg_text', $msg_text);
     $stmt->bindParam(':msg_id', $msg_id);
     $stmt->bindParam(':recipient_id', $recipient_id);
     $stmt->bindParam(':sender_id', $sender_id);
     $stmt->bindParam(':sended_at',$sended_at);
+    $stmt->bindParam(':sender_name',$sender_name);
     $stmt->execute();
     //file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$token",false,$context);
     }
