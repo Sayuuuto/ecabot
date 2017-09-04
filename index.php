@@ -1,5 +1,6 @@
 <?php
 $json = file_get_contents('php://input');
+MsgEvent::handle($json);
 $data=json_decode($json);
 $id = $data->entry[0]->id;
 $msg_text = $data->entry[0]->messaging[0]->message->text;
