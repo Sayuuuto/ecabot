@@ -2,7 +2,7 @@
 
 class MsgEvent
 {
-    public function handle($json)
+    public static function handle($json)
     {
         file_put_contents("fb.txt","handled");
         $data = json_decode($json);
