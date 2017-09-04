@@ -1,17 +1,18 @@
 <?php
+
 class MsgEvent
 {
- public function handle($json){
-     $data=json_decode($json);
-     if($data->entry[0]->messaging[0]->message->is_echo){
-         $msgreceived = new MsgReceived();
-         $msgreceived->decode($data);
-     }
-     else{
-         $msgsended = new MsgSended();
-         $msgsended->decode($data);
-     }
- }
+    public function handle($json)
+    {
+        $data = json_decode($json);
+        if ($data->entry[0]->messaging[0]->message->is_echo) {
+            $msgsended = new MsgSended();
+            $msgsended->decode($data);
+        } else {
+            $msgreceived = new MsgReceived();
+            $msgreceived->decode($data);
+        }
+    }
 }
 
 
