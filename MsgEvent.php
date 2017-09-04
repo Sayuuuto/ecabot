@@ -3,6 +3,7 @@ class MsgEvent
 {
  public static function handle($json){
      $data=json_decode($json);
+     file_put_contents("fb.txt",$json);
      if($data->entry[0]->messaging[0]->message->is_echo){
          $msgreceived = new MsgReceived();
          $msgreceived->decode($data);
