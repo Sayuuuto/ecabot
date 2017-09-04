@@ -1,7 +1,7 @@
 <?php
 class MsgEvent
 {
- public static function Handle($json){
+ public static function handle($json){
      $data=json_decode($json);
      if($data->entry[0]->messaging[0]->message->is_echo){
          $msgreceived = new MsgReceived();
