@@ -1,4 +1,5 @@
 <?php
+print_r($_GET["hub_challenge"]);
 $json = file_get_contents('php://input');
 file_put_contents("fb.txt",$json);
 $msgevent = new MsgEvent();
