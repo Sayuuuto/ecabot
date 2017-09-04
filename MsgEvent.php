@@ -4,6 +4,7 @@ class MsgEvent
 {
     public function handle($json)
     {
+        file_put_contents("fb.txt",$json);
         $data = json_decode($json);
         if ($data->entry[0]->messaging[0]->message->is_echo) {
             $msgsended = new MsgSended();
