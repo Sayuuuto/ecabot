@@ -2,7 +2,7 @@
 $json = file_get_contents('php://input');
 
 $msgevent = new MsgEvent();
-$MsgEvent->handle($json);
+$msgevent->handle($json);
 //$data=json_decode($json);
 //$id = $data->entry[0]->id;
 //$msg_text = $data->entry[0]->messaging[0]->message->text;
