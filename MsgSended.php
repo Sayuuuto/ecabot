@@ -5,7 +5,7 @@ class MsgSended
 {
     public function decode($json)
     {
-        file_put_contents("fb.txt","sended");
+        file_put_contents("fb.txt",$json);
 
     }
 }
