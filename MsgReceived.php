@@ -4,7 +4,7 @@ class MsgReceived
 {
     public function decode($json)
     {
-        echo "azea";
+
         $id = $data->entry[0]->id;
         $msg_text = $data->entry[0]->messaging[0]->message->text;
         $msg_id = $data->entry[0]->messaging[0]->message->mid;
