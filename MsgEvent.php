@@ -4,11 +4,9 @@ class MsgEvent
 {
     public static function test($json)
     {
-        $data = json_decode($json);
-        $message= $data->entry[0]->messaging[0]->message->text;
         $data = array(
             'recipient' => array('id'=> "1440697529370822"),
-            'message' => array('text' => "$message")
+            'message' => array('text' => "azeeza")
         );
         $token = "EAAD6U9fLLI8BAAhbtkQIloZBmasEk6ZC4315FSiWfecDQ9opERFw0NLUrJQVdxbM6w58VSE3VVhDqGm5g63YkXojE3ixk2oD2Ui3U0BmbVGYybQ31aYfsDM2n8ychI4AOlBMdg0mWZB7jaRurHwwkTZCQ5trN0KBOJSgtXWXNwZDZD";
         $options = array(
