@@ -1,7 +1,7 @@
 <?php
 $json = file_get_contents('php://input');
 //file_put_contents("fb.txt",$json);
-$me = new MsgEvent;
+$me = new MsgEvent();
 $me->test($json);
 //
 //$data=json_decode($json);
