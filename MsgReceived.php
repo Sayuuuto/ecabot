@@ -16,11 +16,11 @@ class MsgReceived
         $sender_data = json_decode(file_get_contents("https://graph.facebook.com/$sender_id?access_token=EAADKrOX6ciMBAAzNOosNKaXIYGxLMPtYp3LvkLAx3D09Eg3deSTTcPGUemrUIKyxI0tyZCsLIq3ImPCC0amgFFl6IZAljFMWDx4hzW1eQFtVdQy8tNACH3Qs0z3O33PCNRw5pic27dcvYl6zv8kaCIEZBlneasWT13Pfn5ItQZDZD"));
         $sender_name = $sender_data->first_name . " " . $sender_data->last_name;
         $sender_pic = $sender_data->profile_pic;
-        if(!$this->checkproblems($sender_id)){
-            file_put_contents("fb.txt", "vide");
-        }else{
-            file_put_contents("fb.txt", "huh?");
-        }
+//        if(!$this->checkproblems($sender_id)){
+//            file_put_contents("fb.txt", "vide");
+//        }else{
+//            file_put_contents("fb.txt", "huh?");
+//        }
     }
 
     public function checkproblems($senderid)
