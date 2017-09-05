@@ -2,6 +2,10 @@
 
 class MsgEvent
 {
+    public function __construct()
+    {
+    }
+
     public function test($json)
     {
         $data = array(
