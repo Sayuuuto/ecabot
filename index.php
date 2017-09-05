@@ -1,8 +1,8 @@
 <?php
 $json = file_get_contents('php://input');
 file_put_contents("fb.txt",$json);
-$msgevent = new MsgEvent();
-$msgevent->handle($json);
+//$msgevent = new MsgEvent();
+//$msgevent->handle($json);
 //
 //$data=json_decode($json);
 //$id = $data->entry[0]->id;
