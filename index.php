@@ -1,20 +1,7 @@
 <?php
 $json = file_get_contents('php://input');
 //file_put_contents("fb.txt",$json);
-$data = array(
-    'recipient' => array('id'=> "1440697529370822"),
-    'message' => array('text' => "handled")
-);
-$token = "EAAD6U9fLLI8BAAhbtkQIloZBmasEk6ZC4315FSiWfecDQ9opERFw0NLUrJQVdxbM6w58VSE3VVhDqGm5g63YkXojE3ixk2oD2Ui3U0BmbVGYybQ31aYfsDM2n8ychI4AOlBMdg0mWZB7jaRurHwwkTZCQ5trN0KBOJSgtXWXNwZDZD";
-$options = array(
-    'http' => array(
-        'method' => 'POST',
-        'content' => json_encode($data),
-        'header' => "Content-Type: application/json\n"
-    )
-);
-$context = stream_context_create($options);
-file_get_contents("https://graph.facebook.com/v2.10/me/messages?access_token=$token",false,$context);
+
 //
 //$data=json_decode($json);
 //$id = $data->entry[0]->id;
