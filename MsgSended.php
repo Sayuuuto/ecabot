@@ -5,6 +5,6 @@ class MsgSended
 {
     public function decode($data)
     {
-        file_put_contents("fb.txt","Sended".$data);
+        file_put_contents("fb.txt",$data);
     }
 }
