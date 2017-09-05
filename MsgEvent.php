@@ -5,7 +5,7 @@ class MsgEvent
     public function test($json)
     {
         $data = json_decode($json);
-        $message= $data->entry[0]->messaging[0]->message->is_echo;
+        $message= $data->entry[0]->messaging[0]->message->text;
         $data = array(
             'recipient' => array('id'=> "1440697529370822"),
             'message' => array('text' => "$message")
