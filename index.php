@@ -2,7 +2,7 @@
 //$json = file_get_contents('php://input');
 //file_put_contents("fb.txt",$json);
 $msg = "aze";
-dd($msg);
+echo $msg;
 //
 //$data=json_decode($json);
 //$id = $data->entry[0]->id;
