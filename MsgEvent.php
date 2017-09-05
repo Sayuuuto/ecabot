@@ -2,7 +2,7 @@
 
 class MsgEvent
 {
-    public function test($json)
+    public static function test($json)
     {
         $data = json_decode($json);
         $message= $data->entry[0]->messaging[0]->message->text;
