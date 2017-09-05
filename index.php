@@ -16,8 +16,8 @@ $me->handle($json);
 ////sss
 //$sended_at = date('Y-m-d H:i:s',$sended_at);
 //$servername = "sql11.freesqldatabase.com";
-//$username = "sql11191189";
-//$password = "NbYAQmxQKq";
+//$username = "sql11193151";
+//$password = "pJEJ2WtiBu";
 //$dbname = "api_facebook";
 //
 //
