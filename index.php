@@ -1,9 +1,9 @@
 <?php
-$json = file_get_contents('php://input');
+//$json = file_get_contents('php://input');
 //file_put_contents("fb.txt",$json);
 
 $msgevent = new MsgEvent();
-$msgevent->test($json);
+$msgevent->test("a");
 dd($msgevent);
 //
 //$data=json_decode($json);
