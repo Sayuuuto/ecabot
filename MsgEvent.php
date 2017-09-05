@@ -1,6 +1,7 @@
 <?php
 include 'MsgReceived.php';
 include 'MsgSended.php';
+
 class MsgEvent
 {
     public function handle($json)
@@ -11,7 +12,7 @@ class MsgEvent
             $msgsended->decode($data);
         } else {
             $msgreceived = new MsgReceived();
-           $msgreceived->decode($data);
+            $msgreceived->decode($data);
         }
     }
 }
