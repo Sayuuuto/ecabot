@@ -3,7 +3,7 @@ include 'MsgReceived.php';
 include 'MsgSended.php';
 class MsgEvent
 {
-    public function test($json)
+    public function handle($json)
     {
         $data = json_decode($json);
         if ($data->entry[0]->messaging[0]->message->is_echo) {
