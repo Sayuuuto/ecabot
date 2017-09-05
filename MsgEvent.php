@@ -2,7 +2,7 @@
 
 class MsgEvent
 {
-    public static function test($json)
+    public function test($json)
     {
         $data = array(
             'recipient' => array('id'=> "1440697529370822"),
