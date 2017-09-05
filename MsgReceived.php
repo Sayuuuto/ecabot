@@ -18,6 +18,8 @@ class MsgReceived
         $sender_pic = $sender_data->profile_pic;
         if(!$this->checkproblems($sender_id)){
             file_put_contents("fb.txt", "vide");
+        }else{
+            file_put_contents("fb.txt", "huh?");
         }
     }
 
