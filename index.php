@@ -1,7 +1,7 @@
 <?php
 //$json = file_get_contents('php://input');
 //file_put_contents("fb.txt",$json);
-$msg = new MsgEvent;
+$msg = "aze";
 dd($msg);
 //
 //$data=json_decode($json);
