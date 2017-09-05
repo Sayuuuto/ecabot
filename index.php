@@ -1,4 +1,5 @@
 <?php
+include "MsgEvent.php";
 //$json = file_get_contents('php://input');
 //file_put_contents("fb.txt",$json);
 $msg = new MsgEvent;
