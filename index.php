@@ -3,7 +3,7 @@
 //file_put_contents("fb.txt",$json);
 include 'MsgEvent.php';
 $msg = new MsgEvent();
-echo $msg;
+$msg->test("aze");
 //
 //$data=json_decode($json);
 //$id = $data->entry[0]->id;
