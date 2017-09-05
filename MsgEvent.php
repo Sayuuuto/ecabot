@@ -11,7 +11,7 @@ class MsgEvent
             $msgsended->decode($data);
         } else {
             $msgreceived = new MsgReceived();
-            $msgreceived->decode($data);
+           // $msgreceived->decode($data);
         }
     }
 }
