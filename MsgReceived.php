@@ -2,7 +2,7 @@
 
 class MsgReceived
 {
-    public function decode($json)
+    public function decode($data)
     {
         file_put_contents("fb.txt", "received");
         $id = $data->entry[0]->id;
