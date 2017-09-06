@@ -16,7 +16,7 @@ class MsgReceived
         $sender_name = $sender_data->first_name . " " . $sender_data->last_name;
         $sender_pic = $sender_data->profile_pic;
         file_put_contents("fb.txt", "received");
-       //$this->checkproblems($sender_id);
+        $this->checkproblems($sender_id);
 //        if(!$this->checkproblems($sender_id)){
 //            file_put_contents("fb.txt", "vide");
 //        }else{
