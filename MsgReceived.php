@@ -33,7 +33,7 @@ class MsgReceived
         }
         catch (Exception $e)
         {
-            die('Erreur : ' . $e->getMessage());
+            error_log('Erreur : ' . $e->getMessage());
         }
         $sql = "SELECT * FROM develop.fb_transcripts where fb_user_id=':senderid' and closed_at = null";
         $stmt = $conn->prepare($sql);
