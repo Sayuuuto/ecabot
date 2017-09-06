@@ -26,20 +26,11 @@ class MsgReceived
 
     public function checkproblems($senderid)
     {
-        $conn = null;
-        try
-        {
-            $conn = new PDO("mysql:dbname=develop;host=172.30.1.248", "develop", "dev");
-        }
-        catch (Exception $e)
-        {
-            error_log('Erreur : ' . $e->getMessage());
-        }
-        $sql = "SELECT * FROM develop.fb_transcripts where fb_user_id=':senderid' and closed_at = null";
+        $conn = new PDO("mysql:host=172.30.1.248;dbname=develop;charset=utf8", "develop", "dev");
+        $sql = "SELECT * FROM develop.fb_transcripts where fb_user_id=:senderid and closed_at = null";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':senderid', $senderid);
         $stmt->execute();
-        file_put_contents("fb.txt", $stmt);
         $data = $stmt->fetchAll();
         if ($data->rowCount() > 0) {
             file_put_contents("fb.txt", "huh?");
