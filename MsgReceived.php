@@ -26,8 +26,15 @@ class MsgReceived
 
     public function checkproblems($senderid)
     {
-        $conn = null;   
-        $conn = new PDO("mysql:dbname=develop;host=172.30.1.248", "develop", "dev");
+        $conn = null;
+        try
+        {
+            $conn = new PDO("mysql:dbname=develop;host=172.30.1.248", "develop", "dev");
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
         $sql = "SELECT * FROM develop.fb_transcripts where fb_user_id=':senderid' and closed_at = null";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':senderid', $senderid);
