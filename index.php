@@ -1,9 +1,9 @@
 <?php
-print_r($_GET["hub_challenge"]);
-include 'MsgEvent.php';
-$json = file_get_contents('php://input');
-$msg = new MsgEvent();
-$msg->handle($json);
+print_r ($_GET("hub_challenge");
+//include 'MsgEvent.php';
+//$json = file_get_contents('php://input');
+//$msg = new MsgEvent();
+//$msg->handle($json);
 //
 //$data=json_decode($json);
 //$id = $data->entry[0]->id;
