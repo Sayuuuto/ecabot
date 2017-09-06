@@ -7,7 +7,7 @@ class MsgEvent
     public function handle($json)
     {
         $data = json_decode($json);
-        if (isset($data->entry[0]->messaging[0]->message->is_echo)) {
+        if ($data->entry[0]->messaging[0]->message->is_echo == 1 ) {
             $msgsended = new MsgSended();
             $msgsended->decode($data);
         } else {
